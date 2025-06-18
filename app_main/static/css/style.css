@@ -1,0 +1,7 @@
+/* Custom styles can go here */
+body {
+    padding-top: 56px; /* Adjust if navbar height changes */
+}
+.container {
+    margin-top: 20px;
+}

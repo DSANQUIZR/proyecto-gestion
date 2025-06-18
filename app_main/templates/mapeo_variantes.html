@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapeo Completo de Variantes</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f4f4; color: #333; }
+        header { background-color: #333; color: #fff; padding: 1em 0; text-align: center; }
+        nav ul { list-style-type: none; padding: 0; text-align: center; background-color: #444; }
+        nav ul li { display: inline; margin-right: 20px; }
+        nav ul li a { color: #fff; text-decoration: none; padding: 10px 15px; display: inline-block; }
+        nav ul li a:hover { background-color: #555; }
+        .container { width: 90%; margin: auto; overflow: hidden; padding: 20px; background-color: #fff; }
+        .section { margin-bottom: 20px; padding: 15px; border: 1px solid #ddd; background-color: #f9f9f9; }
+        .section h2 { color: #333; border-bottom: 2px solid #333; padding-bottom: 10px; }
+        .subsection { margin-left: 20px; padding: 10px; border-left: 3px solid #555; background-color: #efefef; }
+        .subsection h3 { color: #444; }
+        table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+        th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+        th { background-color: #e9e9e9; }
+        footer { text-align: center; padding: 20px; background-color: #333; color: #fff; margin-top: 30px; }
+        .button { background-color: #5cb85c; color: white; padding: 10px 15px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; margin: 4px 2px; cursor: pointer; border-radius: 5px; }
+        .button:hover { background-color: #4cae4c; }
+        .grid-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .grid-item { background-color: #f0f0f0; padding: 20px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .grid-item h3 { margin-top: 0; }
+        .tooltip { position: relative; display: inline-block; cursor: pointer; }
+        .tooltip .tooltiptext { visibility: hidden; width: 220px; background-color: #555; color: #fff; text-align: center; border-radius: 6px; padding: 5px 0; position: absolute; z-index: 1; bottom: 125%; left: 50%; margin-left: -110px; opacity: 0; transition: opacity 0.3s; }
+        .tooltip:hover .tooltiptext { visibility: visible; opacity: 1; }
+        /* Estilos adicionales para la funcionalidad de los botones de filtrado */
+        .filter-buttons { margin-bottom: 20px; text-align: center; }
+        .filter-buttons button { margin: 5px; padding: 8px 12px; background-color: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer; }
+        .filter-buttons button:hover { background-color: #0056b3; }
+        .filter-buttons button.active { background-color: #0056b3; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Mapeo Completo de Variantes y Factores</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#personalidad">Tipos de Personalidad</a></li>
+            <li><a href="#cultura">Contexto Cultural</a></li>
+            <li><a href="#psicologicos">Factores Psicológicos</a></li>
+            <li><a href="#mercado">Modelos de Mercado</a></li>
+            <li><a href="#sectores">Sectores Económicos</a></li>
+            <li><a href="#evolucion">Niveles de Evolución</a></li>
+            <li><a href="#dashboard">Dashboard Interactivo</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <!-- Botones de Filtrado -->
+        <div class="filter-buttons">
+            <button onclick="filterAll()">Mostrar Todo</button>
+            <button data-filter="Exploradores">Exploradores</button>
+            <button data-filter="Centinelas">Centinelas</button>
+            <button data-filter="Analistas">Analistas</button>
+            <button data-filter="Diplomáticos">Diplomáticos</button>
+            <button data-filter="Primario">Sector Primario</button>
+            <button data-filter="Secundario">Sector Secundario</button>
+            <button data-filter="Terciario">Sector Terciario</button>
+            <button data-filter="Cuaternario">Sector Cuaternario</button>
+            <button data-filter="Quinario">Sector Quinario</button>
+        </div>
+
+        <div id="personalidad" class="section">
+            <h2>Tipos de Personalidad (MBTI, Keirsey, NERIS)</h2>
+            <div class="grid-container" id="personalidad-grid">
+                <!-- Los datos se cargarán aquí mediante JavaScript -->
+            </div>
+        </div>
+
+        <div id="cultura" class="section">
+            <h2>Contexto Cultural</h2>
+            <div class="grid-container" id="cultura-grid">
+                <!-- Los datos se cargarán aquí mediante JavaScript -->
+            </div>
+        </div>
+
+        <div id="psicologicos" class="section">
+            <h2>Factores Psicológicos</h2>
+            <div class="grid-container" id="psicologicos-grid">
+                <!-- Los datos se cargarán aquí mediante JavaScript -->
+            </div>
+        </div>
+
+        <div id="mercado" class="section">
+            <h2>Modelos de Mercado</h2>
+            <div class="grid-container" id="mercado-grid">
+                <!-- Los datos se cargarán aquí mediante JavaScript -->
+            </div>
+        </div>
+
+        <div id="sectores" class="section">
+            <h2>Sectores Económicos</h2>
+            <div class="grid-container" id="sectores-grid">
+                <!-- Los datos se cargarán aquí mediante JavaScript -->
+            </div>
+        </div>
+
+        <div id="evolucion" class="section">
+            <h2>Niveles de Evolución de Arquetipos</h2>
+            <div class="grid-container" id="evolucion-grid">
+                <!-- Los datos se cargarán aquí mediante JavaScript -->
+            </div>
+        </div>
+
+        <div id="dashboard" class="section">
+            <h2>Dashboard Interactivo</h2>
+            <p>Esta sección integrará visualizaciones dinámicas (gráficos, tablas interactivas) que permitirán a los usuarios explorar las relaciones entre los diferentes factores y arquetipos. Por ejemplo, cómo ciertos tipos de personalidad tienden a preferir modelos de mercado específicos o cómo el contexto cultural afecta la evolución de un arquetipo.</p>
+            <div class="subsection">
+                <h3>Filtros Avanzados</h3>
+                <p>Se implementarán filtros para que los usuarios puedan seleccionar combinaciones específicas:</p>
+                <ul>
+                    <li>Personalidad (MBTI) + Sector Económico</li>
+                    <li>Contexto Cultural + Modelo de Mercado</li>
+                    <li>Arquetipo + Nivel de Evolución</li>
+                </ul>
+                <button class="button" onclick="alert('Funcionalidad de Dashboard en desarrollo')">Explorar Dashboard</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Plataforma de Mapeo de Variantes. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        // Datos (simulados o para ser reemplazados por llamadas a API/DB)
+        const tiposPersonalidad = [
+            { tipo: 'ESTP', nombre: 'Promotor / Emprendedor', temperamento: 'Exploradores (SP)', grupoKeirsey: 'SP (Creativos)', identidad: 'Turbulento (-T)', subtipos: 'Innovador, Estratega, Visionario, Ejecutor, Adaptativo', tooltip: 'Práctico y orientado a resultados.' },
+            { tipo: 'ISTP', nombre: 'Artesano / Virtuoso', temperamento: 'Exploradores (SP)', grupoKeirsey: 'SP (Prácticos)', identidad: 'Turbulento (-T)', subtipos: 'Creador, Visionario, Narrador, Artista, Emprendedor', tooltip: 'Lógico y hábil con herramientas.' },
+            { tipo: 'ESFP', nombre: 'Animador / Artista', temperamento: 'Exploradores (SP)', grupoKeirsey: 'SP (Sociales)', identidad: 'Turbulento (-T)', subtipos: 'Artista, Narrador, Aventurero, Comunicador, Innovador', tooltip: 'Espontáneo y entusiasta.' },
+            { tipo: 'ISFP', nombre: 'Compositor / Aventurero', temperamento: 'Exploradores (SP)', grupoKeirsey: 'SP (Sensibles)', identidad: 'Turbulento (-T)', subtipos: 'Artista, Sanador, Narrador, Innovador, Aventurero', tooltip: 'Encantador y artístico.' },
+            { tipo: 'ESTJ', nombre: 'Supervisor / Ejecutivo', temperamento: 'Centinelas (SJ)', grupoKeirsey: 'SJ (Organizados)', identidad: 'Asertivo (-A)', subtipos: 'Líder, Inspector, Logístico, Defensor, Protagonista', tooltip: 'Organizado y decidido.' },
+            { tipo: 'ISTJ', nombre: 'Inspector / Logístico', temperamento: 'Centinelas (SJ)', grupoKeirsey: 'SJ (Metódicos)', identidad: 'Asertivo (-A)', subtipos: 'Inspector, Logístico, Defensor, Líder, Analista', tooltip: 'Práctico y responsable.' },
+            { tipo: 'ESFJ', nombre: 'Proveedor / Cónsul', temperamento: 'Centinelas (SJ)', grupoKeirsey: 'SJ (Serviciales)', identidad: 'Asertivo (-A)', subtipos: 'Protagonista, Cónsul, Abogado, Héroe, Mentor', tooltip: 'Compasivo y sociable.' },
+            { tipo: 'ISFJ', nombre: 'Protector / Defensor', temperamento: 'Centinelas (SJ)', grupoKeirsey: 'SJ (Protectores)', identidad: 'Asertivo (-A)', subtipos: 'Héroe, Defensor, Abogado, Sanador, Mentor', tooltip: 'Dedicado y cálido.' },
+            { tipo: 'ENTJ', nombre: 'Comandante', temperamento: 'Analistas (NT)', grupoKeirsey: 'NT (Estratégicos)', identidad: 'Asertivo (-A)', subtipos: 'Comandante, Analista, Innovador, Polemista, Líder', tooltip: 'Audaz e imaginativo.' },
+            { tipo: 'INTJ', nombre: 'Arquitecto', temperamento: 'Analistas (NT)', grupoKeirsey: 'NT (Analíticos)', identidad: 'Asertivo (-A)', subtipos: 'Arquitecto, Analista, Lógico, Innovador, Sabio', tooltip: 'Estratégico y pensador.' },
+            { tipo: 'ENTP', nombre: 'Inventor / Polemista', temperamento: 'Analistas (NT)', grupoKeirsey: 'NT (Creativos)', identidad: 'Turbulento (-T)', subtipos: 'Innovador, Polemista, Narrador, Explorador, Visionario', tooltip: 'Curioso e ingenioso.' },
+            { tipo: 'INTP', nombre: 'Lógico', temperamento: 'Analistas (NT)', grupoKeirsey: 'NT (Teóricos)', identidad: 'Turbulento (-T)', subtipos: 'Lógico, Arquitecto, Analista, Sabio, Innovador', tooltip: 'Inventivo y analítico.' },
+            { tipo: 'ENFJ', nombre: 'Mentor / Protagonista', temperamento: 'Diplomáticos (NF)', grupoKeirsey: 'NF (Inspiradores)', identidad: 'Asertivo (-A)', subtipos: 'Sabio, Mentor, Abogado, Paladín, Protagonista', tooltip: 'Carismático e inspirador.' },
+            { tipo: 'INFJ', nombre: 'Consejero / Abogado', temperamento: 'Diplomáticos (NF)', grupoKeirsey: 'NF (Altruistas)', identidad: 'Turbulento (-T)', subtipos: 'Asesor, Abogado, Sanador, Rompecabezas, Sabio', tooltip: 'Perspicaz e idealista.' },
+            { tipo: 'ENFP', nombre: 'Campeón / Paladín', temperamento: 'Diplomáticos (NF)', grupoKeirsey: 'NF (Entusiastas)', identidad: 'Turbulento (-T)', subtipos: 'Explorador, Paladín, Narrador, Innovador, Campeón', tooltip: 'Creativo y sociable.' },
+            { tipo: 'INFP', nombre: 'Sanador / Mediador', temperamento: 'Diplomáticos (NF)', grupoKeirsey: 'NF (Compasivos)', identidad: 'Turbulento (-T)', subtipos: 'Rompecabezas, Sanador, Mediador, Artista, Sabio', tooltip: 'Amable y altruista.' }
+        ];
+
+        const contextosCulturales = [
+            { tipo: 'Colectivista', descripcion: 'Comunidad y tradición influyen en decisiones.', ejemplos: 'China, Japón, Corea del Sur, India', tooltip: 'Énfasis en el grupo.' },
+            { tipo: 'Individualista', descripcion: 'Logro personal y autonomía son centrales.', ejemplos: 'EE.UU., Canadá, Australia, Reino Unido', tooltip: 'Énfasis en el individuo.' },
+            { tipo: 'Híbrido', descripcion: 'Mezcla de valores colectivistas e individualistas.', ejemplos: 'Singapur, Brasil, Sudáfrica, Países Nórdicos', tooltip: 'Balance entre grupo e individuo.' }
+        ];
+
+        const factoresPsicologicos = [
+            { factor: 'Estrés', descripcion: 'Respuesta a situaciones desbordantes.', ajustePersonalidad: 'INFJ-T puede requerir estrategias de gestión.', ajusteMercado: 'B2C: campañas de apoyo emocional.', tooltip: 'Manejo del estrés es clave.' },
+            { factor: 'Motivación', descripcion: 'Proceso interno hacia metas.', ajustePersonalidad: 'ENTJ (extrínseca), INFP (intrínseca).', ajusteMercado: 'B2B: incentivos basados en metas.', tooltip: 'Impulso para actuar.' },
+            { factor: 'Ética', descripcion: 'Principios que guían comportamiento.', ajustePersonalidad: 'INFJ-T decisiones por bienestar colectivo.', ajusteMercado: 'B2C: resaltar responsabilidad social.', tooltip: 'Conducta moral.' },
+            { factor: 'Sostenibilidad', descripcion: 'Considerar necesidades futuras.', ajustePersonalidad: 'ENTP busca soluciones innovadoras.', ajusteMercado: 'B2G: abordar políticas gubernamentales.', tooltip: 'Impacto a largo plazo.' }
+        ];
+
+        const modelosMercado = [
+            { tipo: 'B2B', descripcion: 'Empresa a Empresa', tooltip: 'Transacciones entre negocios.' },
+            { tipo: 'B2C', descripcion: 'Empresa a Consumidor', tooltip: 'Negocios venden a individuos.' },
+            { tipo: 'B2B2C', descripcion: 'Empresa a Empresa a Consumidor', tooltip: 'Negocio sirve a otro que sirve al consumidor.' },
+            { tipo: 'B2G', descripcion: 'Empresa a Gobierno', tooltip: 'Negocios venden a entidades públicas.' },
+            { tipo: 'P2P', descripcion: 'Persona a Persona', tooltip: 'Intercambio directo entre individuos.' },
+            { tipo: 'D2C', descripcion: 'Directo al Consumidor', tooltip: 'Marcas venden sin intermediarios.' }
+        ];
+
+        const sectoresEconomicos = [
+            { tipo_sector: 'Primario', sector: 'Agricultura', descripcion: 'Cultivo de productos vegetales.', ejemplos: 'Empresas agrícolas, cooperativas.', tooltip:'Extracción de recursos naturales.' },
+            { tipo_sector: 'Primario', sector: 'Ganadería', descripcion: 'Crianza de animales.', ejemplos: 'Estancias ganaderas, lácteas.', tooltip:'Cría de animales.' },
+            { tipo_sector: 'Secundario', sector: 'Industria manufacturera', descripcion: 'Transformación de materias primas.', ejemplos: 'Fábricas textiles, automotrices.', tooltip:'Transformación de materias primas.' },
+            { tipo_sector: 'Secundario', sector: 'Construcción', descripcion: 'Edificación de infraestructuras.', ejemplos: 'Constructoras grandes y PYMEs.', tooltip:'Edificación y obras.' },
+            { tipo_sector: 'Terciario', sector: 'Comercio', descripcion: 'Venta de productos.', ejemplos: 'Tiendas, supermercados, e-commerce.', tooltip:'Servicios y comercio.' },
+            { tipo_sector: 'Terciario', sector: 'Turismo y hostelería', descripcion: 'Alojamiento y entretenimiento.', ejemplos: 'Hoteles, restaurantes, agencias.', tooltip:'Servicios turísticos.' },
+            { tipo_sector: 'Cuaternario', sector: 'Tecnologías de la Información (TI)', descripcion: 'Desarrollo de software y hardware.', ejemplos: 'Google, Apple, Amazon.', tooltip:'Conocimiento e información.' },
+            { tipo_sector: 'Cuaternario', sector: 'Investigación científica', descripcion: 'Desarrollo de conocimiento aplicado.', ejemplos: 'Centros de investigación, NASA.', tooltip:'Investigación y desarrollo.' },
+            { tipo_sector: 'Quinario', sector: 'Alta dirección empresarial', descripcion: 'Toma de decisiones estratégicas.', ejemplos: 'CEOs de multinacionales.', tooltip:'Decisiones de alto nivel.' },
+            { tipo_sector: 'Quinario', sector: 'Política y gobierno', descripcion: 'Formulación de políticas públicas.', ejemplos: 'Presidentes, ministros.', tooltip:'Liderazgo y política.' }
+        ];
+
+        const nivelesEvolucion = [
+            { arquetipo: 'Empresario', nivel1: 'Básico (apoyo externo)', nivel2: 'Intermedio (autonomía)', nivel3: 'Avanzado (liderazgo visionario)', tooltip: 'Desarrollo empresarial.' },
+            { arquetipo: 'Creador', nivel1: 'Básico (exploración)', nivel2: 'Intermedio (producción regular)', nivel3: 'Avanzado (maestría creativa)', tooltip: 'Evolución de la creatividad.' },
+            { arquetipo: 'Líder', nivel1: 'Básico (habilidades iniciales)', nivel2: 'Intermedio (liderazgo efectivo)', nivel3: 'Avanzado (liderazgo transformador)', tooltip: 'Crecimiento en liderazgo.' }
+        ];
+
+        function createCard(item, type) {
+            const card = document.createElement('div');
+            card.className = 'grid-item tooltip';
+            let content = `<h3>${item.tipo || item.factor || item.arquetipo || item.tipo_sector || 'Dato'}</h3>`;
+
+            if (type === 'personalidad') {
+                content += `<p><strong>Nombre:</strong> ${item.nombre}</p>`;
+                content += `<p><strong>Temperamento:</strong> ${item.temperamento}</p>`;
+                content += `<p><strong>Grupo Keirsey:</strong> ${item.grupoKeirsey}</p>`;
+                content += `<p><strong>Identidad:</strong> ${item.identidad}</p>`;
+                content += `<p><strong>Subtipos:</strong> ${item.subtipos}</p>`;
+                // Añadir clase de filtro basada en el temperamento
+                if (item.temperamento) card.dataset.category = item.temperamento.split(' ')[0];
+            } else if (type === 'cultura') {
+                content += `<p>${item.descripcion}</p><p><em>Ej: ${item.ejemplos}</em></p>`;
+            } else if (type === 'psicologicos') {
+                content += `<p>${item.descripcion}</p>`;
+                content += `<p><strong>Personalidad:</strong> ${item.ajustePersonalidad}</p>`;
+                content += `<p><strong>Mercado:</strong> ${item.ajusteMercado}</p>`;
+            } else if (type === 'mercado') {
+                content += `<p>${item.descripcion}</p>`;
+            } else if (type === 'sectores') {
+                content += `<p><strong>Sector:</strong> ${item.sector}</p>`;
+                content += `<p>${item.descripcion}</p><p><em>Ej: ${item.ejemplos}</em></p>`;
+                 // Añadir clase de filtro basada en el tipo_sector
+                if (item.tipo_sector) card.dataset.category = item.tipo_sector;
+            } else if (type === 'evolucion') {
+                content += `<p><strong>Nivel 1:</strong> ${item.nivel1}</p>`;
+                content += `<p><strong>Nivel 2:</strong> ${item.nivel2}</p>`;
+                content += `<p><strong>Nivel 3:</strong> ${item.nivel3}</p>`;
+            }
+
+            content += `<span class="tooltiptext">${item.tooltip || 'Más información aquí.'}</span>`;
+            card.innerHTML = content;
+            return card;
+        }
+
+        function loadData() {
+            const personalidadGrid = document.getElementById('personalidad-grid');
+            tiposPersonalidad.forEach(item => personalidadGrid.appendChild(createCard(item, 'personalidad')));
+
+            const culturaGrid = document.getElementById('cultura-grid');
+            contextosCulturales.forEach(item => culturaGrid.appendChild(createCard(item, 'cultura')));
+
+            const psicologicosGrid = document.getElementById('psicologicos-grid');
+            factoresPsicologicos.forEach(item => psicologicosGrid.appendChild(createCard(item, 'psicologicos')));
+
+            const mercadoGrid = document.getElementById('mercado-grid');
+            modelosMercado.forEach(item => mercadoGrid.appendChild(createCard(item, 'mercado')));
+
+            const sectoresGrid = document.getElementById('sectores-grid');
+            sectoresEconomicos.forEach(item => sectoresGrid.appendChild(createCard(item, 'sectores')));
+
+            const evolucionGrid = document.getElementById('evolucion-grid');
+            nivelesEvolucion.forEach(item => evolucionGrid.appendChild(createCard(item, 'evolucion')));
+
+            setupFilterButtons();
+        }
+
+        function setupFilterButtons() {
+            const buttons = document.querySelectorAll('.filter-buttons button[data-filter]');
+            buttons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const filter = this.dataset.filter;
+                    filterCards(filter);
+                    // Manejar clase activa para el botón
+                    document.querySelectorAll('.filter-buttons button').forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+        }
+
+        function filterCards(filter) {
+            const allCards = document.querySelectorAll('.grid-item');
+            allCards.forEach(card => {
+                if (card.dataset.category === filter) {
+                    card.style.display = '';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        function filterAll() {
+            const allCards = document.querySelectorAll('.grid-item');
+            allCards.forEach(card => {
+                card.style.display = '';
+            });
+            document.querySelectorAll('.filter-buttons button').forEach(btn => btn.classList.remove('active'));
+            document.querySelector('.filter-buttons button[onclick="filterAll()"]').classList.add('active');
+        }
+
+
+        window.onload = loadData;
+    </script>
+</body>
+</html>
