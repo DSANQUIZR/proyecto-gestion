@@ -1,0 +1,47 @@
+-- Crear la tabla
+CREATE TABLE sectores_economicos (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    tipo_sector VARCHAR(50),
+    sector VARCHAR(100),
+    descripcion TEXT,
+    ejemplos TEXT
+);
+
+-- Insertar datos en la tabla
+INSERT INTO sectores_economicos (tipo_sector, sector, descripcion, ejemplos) VALUES
+('Primario', 'Agricultura', 'Cultivo de productos vegetales destinados al consumo humano o animal', 'Empresas agrícolas, cooperativas rurales, granjas familiares'),
+('Primario', 'Ganadería', 'Crianza de animales para obtener carne, leche, lana, huevos, etc.', 'Estancias ganaderas, empresas lácteas, criaderos'),
+('Primario', 'Pesca', 'Captura de especies marinas, fluviales o lacustres', 'Empresas pesqueras industriales o artesanales'),
+('Primario', 'Minería', 'Extracción de minerales del subsuelo (oro, plata, cobre, carbón, petróleo)', 'Empresas mineras nacionales e internacionales (ej.: Glencore, Anglo American)'),
+('Primario', 'Silvicultura', 'Explotación sostenible de bosques para madera y otros productos forestales', 'Empresas forestales, industrias de papel y celulosa'),
+('Primario', 'Apicultura', 'Producción de miel, polen y cera mediante la cría de abejas', 'Colmenares comerciales, pequeños productores'),
+('Primario', 'Extracción de recursos no renovables', 'Obtención de combustibles fósiles como petróleo y gas natural', 'Empresas petroleras (ej.: Repsol, Pemex, ExxonMobil)'),
+('Secundario', 'Industria manufacturera', 'Transformación de materias primas en productos terminados', 'Fábricas textiles, alimentarias, automotrices (ej.: Ford), metalúrgicas'),
+('Secundario', 'Construcción', 'Edificación de viviendas, carreteras, puentes y otras infraestructuras', 'Constructoras grandes (ej.: Ferrovial) o PYMEs locales'),
+('Secundario', 'Refinación de petróleo', 'Procesamiento del petróleo crudo para obtener derivados útiles', 'Refinerías de petróleo (ej.: PDVSA, Chevron)'),
+('Secundario', 'Generación de energía', 'Producción de electricidad mediante distintas fuentes (hidroeléctrica, solar, eólica, nuclear)', 'Empresas eléctricas (ej.: Endesa, Iberdrola)'),
+('Secundario', 'Artesanía', 'Fabricación manual de bienes con técnicas tradicionales', 'Talleres artesanales, mercados locales'),
+('Secundario', 'Industria química', 'Producción de sustancias químicas para uso industrial o doméstico', 'Empresas farmacéuticas, fertilizantes, plásticos'),
+('Secundario', 'Industria alimentaria', 'Procesamiento de alimentos y bebidas listos para el consumo', 'Empresas de alimentos empaquetados (ej.: Nestlé), embotelladoras'),
+('Terciario', 'Comercio', 'Venta de productos al por mayor o al por menor', 'Tiendas, supermercados, centros comerciales, marketplaces digitales'),
+('Terciario', 'Transporte y logística', 'Movimiento de personas o mercancías por tierra, mar o aire', 'Aerolíneas (ej.: LATAM), empresas de carga (ej.: DHL), ferrocarriles'),
+('Terciario', 'Servicios públicos', 'Suministro de agua, luz, internet, telecomunicaciones', 'Empresas estatales o privadas de servicios básicos'),
+('Terciario', 'Turismo y hostelería', 'Alojamiento, alimentación y entretenimiento turístico', 'Hoteles, restaurantes, agencias de viaje, parques temáticos'),
+('Terciario', 'Educación', 'Enseñanza formal e informal a diferentes niveles', 'Escuelas, universidades (ej.: Harvard, UNAM), academias privadas'),
+('Terciario', 'Salud', 'Atención médica preventiva, curativa y rehabilitadora', 'Hospitales públicos y privados (ej.: Clínica Mayo), clínicas, farmacias'),
+('Terciario', 'Servicios financieros', 'Gestión de dinero, créditos, inversiones y seguros', 'Bancos (ej.: BBVA), compañías aseguradoras (ej.: Allianz), bolsas de valores'),
+('Terciario', 'Entretenimiento y recreación', 'Actividades culturales, deportivas y recreativas', 'Cines, gimnasios, plataformas de streaming (ej.: Netflix), estadios'),
+('Terciario', 'Servicios profesionales', 'Asesoría técnica, legal, contable, arquitectónica, consultoría', 'Bufetes jurídicos, estudios de arquitectura, firmas de consultoría'),
+('Terciario', 'Administración pública', 'Gestión de políticas y servicios estatales', 'Gobiernos locales, ministerios, organismos reguladores'),
+('Cuaternario', 'Investigación científica', 'Desarrollo de conocimientos científicos aplicados a nuevas tecnologías', 'Centros de investigación (ej.: CSIC, NASA), laboratorios universitarios'),
+('Cuaternario', 'Tecnologías de la Información (TI)', 'Diseño y desarrollo de software, hardware, sistemas informáticos', 'Empresas tecnológicas (ej.: Google, Apple, Amazon)'),
+('Cuaternario', 'Consultoría estratégica', 'Asesoría especializada en gestión empresarial, tecnología o medio ambiente', 'Firmas de consultoría (ej.: McKinsey, Deloitte)'),
+('Cuaternario', 'Educación superior', 'Formación universitaria y postuniversitaria avanzada', 'Universidades públicas y privadas (ej.: MIT, Stanford)'),
+('Cuaternario', 'Análisis de datos y Big Data', 'Recolección, procesamiento y análisis de grandes volúmenes de información', 'Empresas de inteligencia artificial, analítica de datos (ej.: Palantir)'),
+('Cuaternario', 'Innovación tecnológica', 'Creación de nuevos productos, procesos o modelos de negocio disruptivos', 'Startups tecnológicas, incubadoras, parques tecnológicos'),
+('Quinario', 'Alta dirección empresarial', 'Toma de decisiones estratégicas en grandes corporaciones', 'CEO de multinacionales (ej.: Elon Musk, Sundar Pichai)'),
+('Quinario', 'Política y gobierno', 'Formulación y ejecución de políticas públicas nacionales e internacionales', 'Presidentes, ministros, altos funcionarios, parlamentos'),
+('Quinario', 'Liderazgo en organizaciones internacionales', 'Dirección de instituciones globales que impactan múltiples países', 'Directivos del Banco Mundial, ONU, FMI, OCDE'),
+('Quinario', 'Inversión de alto riesgo e impacto', 'Financiamiento de proyectos innovadores con alto potencial de crecimiento', 'Capital riesgo (venture capital), inversores ángeles'),
+('Quinario', 'Innovación disruptiva', 'Desarrollo de ideas revolucionarias que transforman industrias enteras', 'Fundadores de startups tecnológicas (ej.: Mark Zuckerberg)'),
+('Quinario', 'Pensamiento global y tendencias', 'Definición de direcciones futuras en economía, política o sociedad', 'Futurólogos, pensadores influyentes, líderes de opinión');
